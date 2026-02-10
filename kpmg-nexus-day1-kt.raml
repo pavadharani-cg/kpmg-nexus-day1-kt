@@ -1,0 +1,26 @@
+#%RAML 1.0
+title: kpmg-nexus-day1-kt
+version: v1
+
+traits:
+  trackHeader: !include traits.raml
+  
+/getDetails:
+  get:
+    is:
+      [trackHeader]
+    queryParameters:
+      name:
+        type: string
+        required: true
+      dob:
+        type: string
+        required: true
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+              {
+                "message": "Success"
+              }
